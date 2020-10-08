@@ -1,53 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  
-  <!--CSS-->
-  <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
-  <link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css'/>
-  <link rel='stylesheet' href='/Content/app.css' />
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
 
-</head>
-<body>
-
-<!--Main Navigation-->
-<ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link" href="/home"><i class="fas fa-home"></i>Home</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="/about"><i class="fas fa-child"></i></i>About</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="/contact"><i class="far fa-address-card"></i>Contact</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link" href="/services"><i class="fas fa-briefcase"></i></i></i>Services</a>
-  </li>
- 
-  <li class="nav-item">
-    <a class="nav-link" href="/projects"><i class="fab fa-algolia"></i>Projects</a>
-  </li>
-
-</ul>
+<!-- Main content-->
  <main class="container">
   <div class="jumbotron">
-    <h1 class="display-6">Welcome to the <%= title %> page</h1>
+    <h1 class="display-6 centre">Welcome to the <%= title %> page</h1>
   </div>
  </main>
 
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
 
-  <!--Script-->
-  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/jquery/dist/jquery.min.js"></script>
-  <script src="/Scripts/app.js"></script>
-</body>
-</html>
 
 
