@@ -1,9 +1,13 @@
+// COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020
+
 // IIFE -- imediately incove function expression
 (function(){
 
     function start()
     {
+        //indicate when app is functional
         console.log("App Started...");
+        //Save & Reset form key setup
         if(document.title == "Contact")
         {
             let sendButton = document.getElementById("sendButton");
@@ -24,7 +28,7 @@
 
                 format.reset();
             })
-
+            //return -> home page
             cancelButton.addEventListener("click", (event) => {
                 event.preventDefault();
                 if(confirm("Sure?"))

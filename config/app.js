@@ -1,3 +1,5 @@
+// COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020
+
 //installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
@@ -19,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname,'../node_modules')));
+app.use(express.static(path.join(__dirname,'../node_modules')));//necessary path to be added
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

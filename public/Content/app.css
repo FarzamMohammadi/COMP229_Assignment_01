@@ -1,0 +1,80 @@
+/* COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020 */
+
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 2;
+    background: whitesmoke; }
+        
+  a {
+    color: #4aca85;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+    a:hover, a:active, a:focus {
+      color: #4aca85;
+      outline: none;
+      text-decoration: none; }
+
+  input[type="text"] {
+    height: 50px; }
+
+    input[type="email"] {
+        height: 50px; }
+      
+  .form-group {
+    margin-bottom: 30px; }
+
+    .form-group .btn-modify {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 15px; }
+  
+  .btn {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    padding: 8px 20px; }
+    .btn.btn-md {
+      padding: 8px 20px !important; }
+    .btn.btn-lg {
+      padding: 18px 36px !important; }
+    .btn:hover, .btn:active, .btn:focus {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      outline: none !important; }
+  
+  .btn-primary {
+    background: #4aca85;
+    color: #fff;
+    border: 1px solid #4aca85; }
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+      background: #5ed092 !important;
+      border-color: #5ed092 !important; }
+    .btn-primary.btn-outline {
+      background: transparent;
+      color: #4aca85;
+      border: 1px solid #4aca85; }
+      .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
+        background: #4aca85;
+        color: #fff; }
+  
+    footer { 
+        color: #ffffff; 
+        background-color: rgb(50, 50, 50); 
+        text-align:center; 
+     	height: 55px;	 
+        font-size: 80%; 
+        padding: 10px 0; 
+    } 

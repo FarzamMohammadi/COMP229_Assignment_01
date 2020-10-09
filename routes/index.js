@@ -6,6 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
+// COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020
+
 /* 2nd function to GET home page. */
 router.get('/home', function(req, res, next) {
   res.render('home', { title: 'Home' });
