@@ -21,14 +21,31 @@
                 let phoneNumber = document.getElementById("tel").value;
                 let message = document.getElementById("message").value;
 
-                console.info(`Full Name: ${fullName} 
-                Email: ${emailAddress}
-                Phone Number: ${phoneNumber}
-                Your Message: ${message}`)
+                if(fullName == "") {
+                    alert(' please fill in all required fields!');
+                }
+                else if (emailAddress.includes("@", 1) != true)
+                {
 
-                format.reset();
+                    alert('Please enter a valid email!');
+                }
+                else{
+                    //info capturee
+                    console.info(`Full Name: ${fullName} 
+                    Email: ${emailAddress}
+                    Phone Number: ${phoneNumber}
+                    Your Message: ${message}`);
+                    
+                    document.getElementById("name").value = "";
+                    document.getElementById("emailAddress").value = "";
+                    document.getElementById("tel").value = "";
+                    document.getElementById("message").value = "";
+                }
+                
+
+                
             })
-            //return -> home page
+            //redirect -> home page
             cancelButton.addEventListener("click", (event) => {
                 event.preventDefault();
                 if(confirm("Sure?"))
