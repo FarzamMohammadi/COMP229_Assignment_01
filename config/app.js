@@ -22,11 +22,12 @@ mongoDB.once('open', ()=>{
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
+let booksRouter = require('../routes/book'); // change accordingly
 
 let app = express();
 
 // view engine setup
-app.set('../views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs'); //express --view=ejs
 
 app.use(logger('dev'));
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname,'../node_modules')));//necessary path
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/book-list', booksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
