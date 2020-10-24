@@ -1,0 +1,53 @@
+<!-- COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020-->
+
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Main content-->
+ <main class="container">
+<div class="row">
+    <div class="offset-md-1 col-md-10">
+        <h1><%= title %></h1>
+        <a href="/book-list/add" class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Add a Book</a>
+        <br>
+        <table class="table table-bordered table-striped table-hover">
+            <!-- Header Row -->
+            <tr class="d-flex">
+                <th class="text-center col-2">Name</th>
+                <th class="text-center col-2">Author</th>
+                <th class="text-center col-2">Published</th>
+                <th class="text-center col-2">Price</th>
+                <th class="text-center col-2">Edit</th>
+                <th class="text-center col-2">Remove</th>
+            </tr>
+
+            <!-- Repeatable template row-->
+            <% for(let count = 0; count < bookList.length; count++) { %>
+            <tr class="d-flex">
+                <td class="text-center col-2"><%= bookList[count].name %></td>
+                <td class="text-center col-2"><%= bookList[count].author %></td>
+                <td class="text-center col-2"><%= bookList[count].published %></td>
+                <td class="text-center col-2"><%= bookList[count].price %></td>
+                <td class="text-center col-2">
+                    <a  href="/book-list/edit/<%= bookList[count]._id %>" class="btn btn-outline-warning">
+                        <i class="fas fa-trash-alt"></i>Edit</a>
+                </td>
+                <td class="text-center col-2">
+                    <a name=".btn-danger" href="/book-list/delete/<%= bookList[count]._id %>" class="btn btn-outline-danger">
+                    <i class="fas fa-trash-alt"></i>Delete</a>
+                </td>
+            </tr>
+            <% } %> 
+        </table>
+    </div>
+</div>
+
+
+<!-- Additional content-->
+ </main>
+
+<%- include ../partials/footer.ejs %>
+
+
+
