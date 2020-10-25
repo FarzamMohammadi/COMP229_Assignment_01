@@ -8,8 +8,10 @@
 <div class="row">
     <div class="offset-md-1 col-md-10">
         <h1><%= title %></h1>
+        <% if(typeof displayName == 'string' && displayName) {%>
         <a href="/book-list/add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Add a Book</a>
+        <% } %>
         <br>
         <table class="table table-bordered table-striped table-hover">
             <!-- Header Row -->
@@ -18,8 +20,12 @@
                 <th class="text-center col-2">Author</th>
                 <th class="text-center col-2">Published</th>
                 <th class="text-center col-2">Price</th>
+                <% if(typeof displayName == 'string' && displayName) {%>
                 <th class="text-center col-2">Edit</th>
                 <th class="text-center col-2">Remove</th>
+                <% } else { %>
+                          <th class="text-center col-4"> Edit / Remove</th>
+              <% } %>
             </tr>
 
             <!-- Repeatable template row-->
@@ -29,22 +35,26 @@
                 <td class="text-center col-2"><%= bookList[count].author %></td>
                 <td class="text-center col-2"><%= bookList[count].published %></td>
                 <td class="text-center col-2"><%= bookList[count].price %></td>
+                <% if(typeof displayName == 'string' && displayName) {%>
                 <td class="text-center col-2">
-                    <a  href="/book-list/edit/<%= bookList[count]._id %>" class="btn btn-outline-warning">
+                <a  href="/book-list/edit/<%= bookList[count]._id %>" class="btn btn-outline-warning">
                         <i class="fas fa-trash-alt"></i>Edit</a>
                 </td>
                 <td class="text-center col-2">
                     <a name=".btn-danger" href="/book-list/delete/<%= bookList[count]._id %>" class="btn btn-outline-danger">
                     <i class="fas fa-trash-alt"></i>Delete</a>
                 </td>
+                  <% } else { %>
+                 <td class="text-center col-4">
+                    <a href="/login" class="btn btn-outline-danger">
+                    <i class="fas fa-sign-in-alt"></i></i> Login </a>
             </tr>
+                    <% } %>
             <% } %> 
         </table>
     </div>
 </div>
 
-
-<!-- Additional content-->
  </main>
 
 <%- include ../partials/footer.ejs %>
