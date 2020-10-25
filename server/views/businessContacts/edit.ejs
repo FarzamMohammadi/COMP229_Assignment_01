@@ -1,0 +1,57 @@
+<!-- COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020-->
+
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<div class="container">
+    <div class="dor">
+        <div class="offset-md-3 col-md-6"></div>
+        <h1><% title %></h1>
+        
+        <form class="form" method="POST">
+            <div class="form-group">
+                <label for="nameTextField">Contact Name</label>
+                <input type="text" class="form-control"
+                id="nameTextField" placeholder="Enter The Contact Name"
+                name="name" 
+                value="<%= contact.name %>"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailTextField">Email: </label>
+                <input type="email" class="form-control"
+                id="emailTextField" placeholder="Enter Email"
+                name="email"
+                value="<%= contact.email %>"
+                required>
+            </div>
+
+            <div class="form-group">
+                 <label for="numberTextField">Price</label>
+                <input type="number" class="form-control"
+                id="numberTextField" placeholder="Enter Phone Number"
+                name="number"
+                value="<%= contact.number %>"
+                required>
+            </div>
+
+            <button class="btn btn-outline-success" type="submit">
+                <i class="fas fa-edit"></i>Submit</button>
+
+                <a href="/contacts-list" class="btn btn-outline-warning">
+                    <i class="fas fa-undo"></i>Cancel</a>
+
+
+                <a href="/contacts-list/delete/<%= contact._id %>" class="btn btn-outline-danger">
+                <i class="fas fa-trash-alt"></i>Delete</a>
+                </td>
+        </form>
+
+    </div>
+</div>
+
+<%- include ../partials/footer.ejs %>
+
+
+

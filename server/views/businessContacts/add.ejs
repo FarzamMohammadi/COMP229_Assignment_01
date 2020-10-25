@@ -12,37 +12,30 @@
         
         <form class="form" method="POST">
             <div class="form-group">
-                <label for="nameTextField">Book Title</label>
+                <label for="nameTextField">Contact Name:</label>
                 <input type="text" class="form-control"
-                id="nameTextField" placeholder="Enter The Book title"
+                id="nameTextField" placeholder="Enter The Contact Name"
                 name="name" required>
             </div>
 
             <div class="form-group">
-                <label for="authorTextField">Author</label>
-                <input type="text" class="form-control"
-                id="authorTextField" placeholder="Enter The Book's Author"
-                name="author" required>
+                <label for="emailTextField">Email: </label>
+                <input type="email" class="form-control"
+                id="emailTextField" placeholder="Enter Email"
+                name="email" required>
             </div>
 
             <div class="form-group">
-                <label for="publishedTextField">Year</label>
-                <input type="text" class="form-control"
-                id="publishedTextField" placeholder="Enter The Year of Publication"
-                name="published" required>
-            </div>
-
-            <div class="form-group">
-                <label for="priceTextField">Price</label>
+                <label for="numberTextField">Price</label>
                 <input type="number" class="form-control"
-                id="priceTextField" placeholder="Enter The Book's Price"
-                name="price" required>
+                id="numberTextField" placeholder="Enter Phone Number"
+                name="number" required>
             </div>
 
             <button class="btn btn-primary" type="submit">
                 <i class="fas fa-edit"></i>Submit</button>
 
-                <a href="/book-list" class="btn btn-warning">
+                <a href="/contacts-list" class="btn btn-warning">
                     <i class="fas fa-undo"></i>Cancel</a>
         </form>
 

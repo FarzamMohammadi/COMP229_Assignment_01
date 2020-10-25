@@ -28,7 +28,7 @@ function irreversibleButtons(){
                 if(!confirm("ARE YOU SURE?"))
                 {
                     event.preventDefault();
-                    window.location.assign('/book-list');
+                    window.location.assign('/contacts-list');
                 }
             });
         }

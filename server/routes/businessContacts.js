@@ -3,7 +3,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-let bookController = require('../controllers/book');
+let contactController = require('../controllers/businessContacts');
 
 //helper function for guard purposes
 function requireAuth(req, res, next)
@@ -16,22 +16,22 @@ function requireAuth(req, res, next)
     next();
 }
 
-// GET route for the Book list - READ operation
-router.get('/', bookController.displayBookList);
+// GET route for the business contacts list - READ operation
+router.get('/', requireAuth, contactController.displayBusinessList);
 
 // GET route for displaying add page - CREATE operation
-router.get('/add', requireAuth, bookController.displayAddPage);
+router.get('/add', requireAuth, contactController.displayAddPage);
 
 // POST route for processing the add page - CREATE operation
-router.post('/add', requireAuth, bookController.processAddPage);
+router.post('/add', requireAuth, contactController.processAddPage);
 
 // GET route for displaying the edit page - UPDATE operation
-router.get('/edit/:id', requireAuth, bookController.displayEditPage);
+router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 
 // POST route for processing the edit page - UPDATE operation
-router.post('/edit/:id', requireAuth, bookController.processEditPage);
+router.post('/edit/:id', requireAuth, contactController.processEditPage);
 
 // GET to perform deletion - DELETE operation
-router.get('/delete/:id', requireAuth, bookController.performDelete);
+router.get('/delete/:id', requireAuth, contactController.performDelete);
 
 module.exports = router;
