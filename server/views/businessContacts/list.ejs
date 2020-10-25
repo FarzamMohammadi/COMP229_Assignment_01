@@ -29,11 +29,12 @@
 
             <!-- Repeatable template row-->
             <% for(let count = 0; count < contactsList.length; count++) { %>
+                        <% if(typeof displayName == 'string' && displayName) {%>
             <tr class="d-flex">
                 <td class="text-center col-3"><%= contactsList[count].name %></td>
                 <td class="text-center col-3"><%= contactsList[count].email %></td>
                 <td class="text-center col-2"><%= contactsList[count].number %></td>
-                <% if(typeof displayName == 'string' && displayName) {%>
+                
                 <td class="text-center col-2">
                 <a  href="/contacts-list/edit/<%= contactsList[count]._id %>" class="btn btn-outline-warning">
                         <i class="fas fa-trash-alt"></i>Edit</a>
@@ -43,9 +44,10 @@
                     <i class="fas fa-trash-alt"></i>Delete</a>
                 </td>
                   <% } else { %>
-                 <td class="text-center col-4">
+                                   <td class="text-center">
                     <a href="/login" class="btn btn-outline-danger">
                     <i class="fas fa-sign-in-alt"></i></i> Login </a>
+
             </tr>
                     <% } %>
             <% } %> 

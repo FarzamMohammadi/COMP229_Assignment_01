@@ -9,17 +9,17 @@
         console.log("App Started...");
 
         //Form setup
-        if(document.title == "Contact"){
+        if(document.title == "Contact Us"){
             formHandler();
         }
 
-        //Irreversible button functions 
+        //Prevention  of irreversible button functions 
         irreversibleButtons();
     }
     window.addEventListener("load", start);
 })();
 
-//Prevents default function for irreversible buttons
+//Prevents default button functions
 function irreversibleButtons(){
     let dangerButtons = document.getElementsByName('.btn-danger');
         for(button of dangerButtons)
@@ -56,7 +56,7 @@ function formHandler(){
                 alert('Please enter a valid email!');
             }
             else{
-                //info capturee
+                //info capture
                 console.info(`Full Name: ${fullName} 
                 Email: ${emailAddress}
                 Phone Number: ${phoneNumber}
