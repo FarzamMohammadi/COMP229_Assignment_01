@@ -6,16 +6,23 @@ let mongoose = require('mongoose');
 let Contact = require('../models/businessContacts');
 
 module.exports.displayBusinessList = (req, res, next) => {
-    Contact.find((err, contactsList) =>{
+   
+    Contact.find((err, contactsList123) =>{
         if(err)
         {
             return console.error(err);
         }
         else 
         {
-            //console.log(contactsList);
-            res.render('businessContacts/list', {title: 'Business Contacts', contactsList, 
-            displayName: req.user ? req.user.displayName : ''});
+            //Sorting the list by alphabetical order
+            let contactsList = contactsList123.sort(function(a, b){
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0;
+            })
+
+            res.render('businessContacts/list', {title: 'Business Contacts', contactsList,
+             displayName: req.user ? req.user.displayName : ''});
         }
     });
 };
