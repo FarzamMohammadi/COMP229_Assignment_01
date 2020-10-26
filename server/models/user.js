@@ -1,3 +1,5 @@
+//COMP229_Assignment_02, Farzam Mohammadi Assad, 301109706, Oct/25/2020
+
 //require modules for the USER model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');

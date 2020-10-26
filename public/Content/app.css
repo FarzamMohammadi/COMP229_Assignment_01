@@ -1,27 +1,18 @@
-/* COMP229_Assignment_01, Farzam Mohammadi Assad, 301109706, Oct/09/2020 */
+/* COMP229_Assignment_02, Farzam Mohammadi Assad, 301109706, Oct/25/2020 */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
   body {
     font-family: "Poppins", Arial, sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 2;
-    background: whitesmoke; }
+    font-weight: 500px;
+    font-size: 17px;
+    background: whitesmoke;
+    background-image: url('../images/background.jpeg'); 
+    margin: 0 0 100px;}
         
-  a {
-    color: #4aca85;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
-    a:hover, a:active, a:focus {
-      color: #4aca85;
-      outline: none;
-      text-decoration: none; }
-
-  input[type="text"] {
-    height: 50px; }
-
-    input[type="email"] {
-        height: 50px; }
+ 
       
   .form-group {
     margin-bottom: 30px; }
@@ -74,7 +65,11 @@
         color: #ffffff; 
         background-color: rgb(50, 50, 50); 
         text-align:center; 
-     	height: 55px;	 
+     	height: 40px;	 
         font-size: 80%; 
         padding: 10px 0; 
+        position: absolute;
+        bottom: 0px;   
+        width: 100%;
+        overflow: hidden;
     } 
