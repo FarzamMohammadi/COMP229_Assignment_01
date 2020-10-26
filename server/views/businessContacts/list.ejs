@@ -1,0 +1,63 @@
+<!-- COMP229_Assignment_02, Farzam Mohammadi Assad, 301109706, Oct/25/2020-->
+
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Main content-->
+ <main class="container">
+<div class="row">
+    <div class="col-md-12">
+        <h1><%= title %></h1>
+        <% if(typeof displayName == 'string' && displayName) {%>
+        <a href="/contacts-list/add" class="btn btn-outline-success" role="button">
+        <i class="fas fa-plus-circle"></i> Add a Contact</a>
+        <% } %>
+        <br>
+        <table class="table table-bordered table-striped table-hover">
+            <!-- Header Row -->
+            <tr class="d-flex">
+                <th class="text-center col-3">Name</th>
+                <th class="text-center col-3">Email</th>
+                <th class="text-center col-2">Phone Number</th>
+                <% if(typeof displayName == 'string' && displayName) {%>
+                <th class="text-center col-2">Edit</th>
+                <th class="text-center col-2">Remove</th>
+                <% } else { %>
+                          <th class="text-center col-4"> Edit / Remove</th>
+              <% } %>
+            </tr>
+
+            <!-- Repeatable template row-->
+            <% for(let count = 0; count < contactsList.length; count++) { %>
+                        <% if(typeof displayName == 'string' && displayName) {%>
+            <tr class="d-flex">
+                <td class="text-center col-3"><%= contactsList[count].name %></td>
+                <td class="text-center col-3"><%= contactsList[count].email %></td>
+                <td class="text-center col-2"><%= contactsList[count].number %></td>
+                
+                <td class="text-center col-2">
+                <a  href="/contacts-list/edit/<%= contactsList[count]._id %>" class="btn btn-outline-warning">
+                        <i class="far fa-edit"></i>Edit</a>
+                </td>
+                <td class="text-center col-2">
+                    <a name=".btn-danger" href="/contacts-list/delete/<%= contactsList[count]._id %>" class="btn btn-outline-danger">
+                    <i class="fas fa-trash-alt"></i>Delete</a>
+                </td>
+                  <% } else { %>
+                                   <td class="text-center">
+                    <a href="/login" class="btn btn-outline-danger">
+                    <i class="fas fa-sign-in-alt"></i></i> Login </a>
+
+            </tr>
+                    <% } %>
+            <% } %> 
+        </table>
+    </div>
+</div>
+
+ </main>
+
+<%- include ../partials/footer.ejs %>
+
+
+
